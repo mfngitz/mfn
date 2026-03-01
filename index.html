@@ -6,7 +6,8 @@
         <title>mfn | main.page</title>
 
         <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     </head>
 
     <body>
@@ -17,7 +18,8 @@
                         <div class="topbar">
                             <div class="topbar-left">
                                 <div class="topbar-avatar-wrapper">
-                                    <img class="topbar-avatar" src="pfp.png" alt="User Avatar" />
+                                    <img class="topbar-avatar" src="pfp.png"
+                                        alt="User Avatar" />
                                     <div class="discord-status offline"></div>
                                 </div>
 
@@ -27,7 +29,8 @@
                                     </div>
 
                                     <div class="userid-wrapper">
-                                        <span class="userid">771464297419243560</span>
+                                        <span
+                                            class="userid">771464297419243560</span>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +62,8 @@
                         <div class="container">
                             <div class="container-header">
                                 <span class="container-title">
-                                    mfn / <span class="container-title-muted">main.page</span>
+                                    mfn / <span
+                                        class="container-title-muted">main.page</span>
                                 </span>
                             </div>
 
@@ -68,14 +72,18 @@
                                 <hr class="divider-line" />
 
                                 <p class="bio">
-                                    A self-taught developer born in the United States, from California. I began
-                                    programming in 2019 and focus on AI-driven systems, prediction markets, quantitative
-                                    trading models, automation bots, and full-stack web development.
+                                    A self-taught developer born in the United
+                                    States, from California. I began
+                                    programming in 2019 and focus on AI-driven
+                                    systems, prediction markets, quantitative
+                                    trading models, automation bots, and
+                                    full-stack web development.
                                 </p>
 
                                 <div class="info-grid">
                                     <div class="info-item">
-                                        <span class="info-label">Experience</span>
+                                        <span
+                                            class="info-label">Experience</span>
                                         <span class="info-value">5 years</span>
                                     </div>
 
@@ -85,8 +93,7 @@
                                             href="https://github.com/mfngitz"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            class="info-link"
-                                        >
+                                            class="info-link">
                                             mfn
                                         </a>
                                     </div>
@@ -94,7 +101,8 @@
 
                                 <hr class="divider-line" />
 
-                                <p class="section-label-small">Specializations</p>
+                                <p
+                                    class="section-label-small">Specializations</p>
 
                                 <div class="lang-list">
                                     <div class="lang-item">
@@ -106,19 +114,23 @@
                                     <div class="lang-item">
                                         <i class="devicon-css3-plain"></i>
                                         <span class="lang-name">CSS</span>
-                                        <span class="lang-tag">Modern Styling</span>
+                                        <span class="lang-tag">Modern
+                                            Styling</span>
                                     </div>
 
                                     <div class="lang-item">
                                         <i class="devicon-javascript-plain"></i>
-                                        <span class="lang-name">JavaScript</span>
-                                        <span class="lang-tag">Web & Automation</span>
+                                        <span
+                                            class="lang-name">JavaScript</span>
+                                        <span class="lang-tag">Web &
+                                            Automation</span>
                                     </div>
 
                                     <div class="lang-item">
                                         <i class="devicon-python-plain"></i>
                                         <span class="lang-name">Python</span>
-                                        <span class="lang-tag">Data Analysis</span>
+                                        <span class="lang-tag">Data
+                                            Analysis</span>
                                     </div>
                                 </div>
                             </div>
@@ -136,8 +148,7 @@
                     stroke="#555"
                     stroke-width="2"
                     stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
+                    stroke-linejoin="round">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
                     <circle cx="12" cy="12" r="3" />
                 </svg>
@@ -147,248 +158,175 @@
             <div id="copy-toast" class="copy-toast">Copied</div>
         </div>
         <script>
-            const UID = "771464297419243560";
+            const id = "771464297419243560"
             
-            let ws = null;
-            let retry = null;
+            let s
+            let loop
+            let t
+            let curTrack
             
-            const status = document.querySelector(".discord-status");
-            const player = document.querySelector(".spotify-player");
-            const topWrap = document.querySelector(".topbar-wrapper");
+            const st = document.querySelector(".discord-status")
+            const p = document.querySelector(".spotify-player")
+            const w = document.querySelector(".topbar-wrapper")
             
-            const art = player.querySelector(".spotify-album-art");
-            const song = player.querySelector(".spotify-song");
-            const artist = player.querySelector(".spotify-artist");
-            const album = player.querySelector(".spotify-album");
+            const img = p.querySelector(".spotify-album-art")
+            const title = p.querySelector(".spotify-song")
+            const by = p.querySelector(".spotify-artist")
+            const alb = p.querySelector(".spotify-album")
             
-            const bar = player.querySelector(".spotify-progress-fill");
-            const startEl = player.querySelector(".spotify-start");
-            const endEl = player.querySelector(".spotify-end");
+            const fill = p.querySelector(".spotify-progress-fill")
+            const time1 = p.querySelector(".spotify-start")
+            const time2 = p.querySelector(".spotify-end")
             
-            let timer = null;
-            let trackId = null;
+            const idBox = document.querySelector(".userid-wrapper")
+            const idTxt = document.querySelector(".userid")
+            const toast = document.getElementById("copy-toast")
+            const views = document.querySelector(".views-box span")
             
-            const idWrap = document.querySelector(".userid-wrapper");
-            const idText = document.querySelector(".userid");
-            const toast = document.getElementById("copy-toast");
-            const viewsEl = document.querySelector(".views-box span");
+            let toastT
             
-            let toastTimer = null;
+            let v = +localStorage.getItem("v") || 0
+            if (!localStorage.getItem("v_done")) {
+                v++
+                localStorage.setItem("v", v)
+                localStorage.setItem("v_done", 1)
+            }
+            views.textContent = v
             
-            function views() {
-                let total = parseInt(localStorage.getItem("v_total") || "0", 10);
-                const seen = localStorage.getItem("v_seen");
+            idBox.onclick = async () => {
+                try {
+                    await navigator.clipboard.writeText(idTxt.textContent.trim())
+                    if (toastT) clearTimeout(toastT)
+                    toast.classList.add("show")
+                    toastT = setTimeout(() => toast.classList.remove("show"), 1600)
+                } catch {}
+            }
             
-                if (!seen) {
-                    total += 1;
-                    localStorage.setItem("v_total", total);
-                    localStorage.setItem("v_seen", "1");
+            function open() {
+                if (s) s.close()
+            
+                s = new WebSocket("wss://api.lanyard.rest/socket")
+            
+                s.onopen = () => {
+                    s.send(JSON.stringify({
+                        op: 2,
+                        d: { subscribe_to_id: id }
+                    }))
                 }
             
-                viewsEl.textContent = total;
-            }
+                s.onmessage = e => {
+                    const m = JSON.parse(e.data)
+                    if (!m.t) return
             
-            idWrap.addEventListener("click", async () => {
-                try {
-                    await navigator.clipboard.writeText(idText.textContent.trim());
-                    showToast();
-                } catch {}
-            });
-            
-            function showToast() {
-                if (toastTimer) clearTimeout(toastTimer);
-                toast.classList.add("show");
-                toastTimer = setTimeout(() => {
-                    toast.classList.remove("show");
-                }, 1600);
-            }
-            
-            function connect() {
-                if (ws && ws.readyState === WebSocket.OPEN) return;
-            
-                ws = new WebSocket("wss://api.lanyard.rest/socket");
-            
-                ws.addEventListener("open", () => {
-                    ws.send(JSON.stringify({
-                        op: 2,
-                        d: { subscribe_to_id: UID }
-                    }));
-                });
-            
-                ws.addEventListener("message", (e) => {
-                    const msg = JSON.parse(e.data);
-                    if (!msg.t) return;
-            
-                    if (msg.t === "INIT_STATE" || msg.t === "PRESENCE_UPDATE") {
-                        const d = msg.d;
-            
-                        status.className = "discord-status " + d.discord_status;
+                    if (m.t === "INIT_STATE" || m.t === "PRESENCE_UPDATE") {
+                        const d = m.d
+                        st.className = "discord-status " + d.discord_status
             
                         if (d.listening_to_spotify && d.spotify) {
-                            show(d.spotify);
+                            show(d.spotify)
                         } else {
-                            hide();
+                            hide()
                         }
                     }
-                });
-            
-                ws.addEventListener("close", () => {
-                    if (retry) clearTimeout(retry);
-                    retry = setTimeout(connect, 200);
-                });
+                }
             }
             
-            function reconnect() {
-                if (!ws) return;
-                ws.close();
-            }
+            setInterval(open, 2000)
             
-            function show(s) {
-                if (s.track_id === trackId) return;
-                trackId = s.track_id;
+            function show(sp) {
+                if (sp.track_id === curTrack) return
+                curTrack = sp.track_id
             
-                player.classList.add("visible");
-                topWrap.classList.add("has-spotify");
+                p.classList.add("visible")
+                w.classList.add("has-spotify")
             
-                art.crossOrigin = "anonymous";
-                art.src = s.album_art_url;
+                img.src = sp.album_art_url
+                img.onload = glow
             
-                art.onload = () => glow(art);
+                title.textContent = sp.song
+                by.textContent = sp.artist
+                alb.textContent = sp.album
             
-                song.textContent = s.song;
-                artist.textContent = s.artist;
-                album.textContent = s.album;
+                title.href = "https://open.spotify.com/track/" + sp.track_id
+                title.target = "_blank"
             
-                song.href = "https://open.spotify.com/track/" + s.track_id;
-                song.target = "_blank";
-            
-                progress(s.timestamps.start, s.timestamps.end);
+                bar(sp.timestamps.start, sp.timestamps.end)
             }
             
             function hide() {
-                player.classList.remove("visible");
-                topWrap.classList.remove("has-spotify");
+                p.classList.remove("visible")
+                w.classList.remove("has-spotify")
+                curTrack = null
             
-                trackId = null;
+                if (t) clearInterval(t)
             
-                if (timer) {
-                    clearInterval(timer);
-                    timer = null;
-                }
-            
-                bar.style.width = "0%";
-                startEl.textContent = "0:00";
-                endEl.textContent = "0:00";
-                art.style.boxShadow = "none";
+                fill.style.width = "0%"
+                time1.textContent = "0:00"
+                time2.textContent = "0:00"
             }
             
-            function progress(start, end) {
-                if (timer) {
-                    clearInterval(timer);
-                    timer = null;
-                }
+            function bar(start, end) {
+                if (t) clearInterval(t)
             
-                const len = end - start;
+                const len = end - start
             
                 function tick() {
-                    const now = Date.now();
-                    let cur = now - start;
+                    let now = Date.now() - start
+                    if (now > len) now = len
             
-                    if (len <= 0) cur = 0;
-            
-                    if (cur >= len) {
-                        cur = len;
-                        clearInterval(timer);
-                        timer = null;
-                        reconnect();
-                    }
-            
-                    const pct = Math.min(Math.max((cur / len) * 100, 0), 100);
-            
-                    bar.style.width = pct + "%";
-                    startEl.textContent = fmt(cur);
-                    endEl.textContent = fmt(len);
+                    fill.style.width = (now / len) * 100 + "%"
+                    time1.textContent = fmt(now)
+                    time2.textContent = fmt(len)
                 }
             
-                tick();
-                timer = setInterval(tick, 1000);
+                tick()
+                t = setInterval(tick, 1000)
             }
             
             function fmt(ms) {
-                const s = Math.floor(ms / 1000);
-                const m = Math.floor(s / 60);
-                const r = s % 60;
-                return m + ":" + (r < 10 ? "0" : "") + r;
+                const s = Math.floor(ms / 1000)
+                const m = Math.floor(s / 60)
+                const r = s % 60
+                return m + ":" + (r < 10 ? "0" : "") + r
             }
             
-            function glow(imgEl) {
-                const img = new Image();
-                img.crossOrigin = "anonymous";
-                img.src = imgEl.src;
+            function glow() {
+                const i = new Image()
+                i.crossOrigin = "anonymous"
+                i.src = img.src
             
-                img.onload = () => {
-                    const c = document.createElement("canvas");
-                    const x = c.getContext("2d");
+                i.onload = () => {
+                    const c = document.createElement("canvas")
+                    const x = c.getContext("2d")
+                    c.width = 60
+                    c.height = 60
             
-                    const size = 60;
-                    c.width = size;
-                    c.height = size;
+                    x.drawImage(i, 0, 0, 60, 60)
+                    const d = x.getImageData(0, 0, 60, 60).data
             
-                    x.drawImage(img, 0, 0, size, size);
-                    const { data } = x.getImageData(0, 0, size, size);
+                    let r = 0, g = 0, b = 0, n = 0
             
-                    let r = 0, g = 0, b = 0, n = 0;
-            
-                    for (let i = 0; i < data.length; i += 4) {
-                        const rr = data[i];
-                        const gg = data[i + 1];
-                        const bb = data[i + 2];
-            
-                        if (rr < 20 && gg < 20 && bb < 20) continue;
-            
-                        r += rr;
-                        g += gg;
-                        b += bb;
-                        n++;
+                    for (let j = 0; j < d.length; j += 4) {
+                        if (d[j] < 20 && d[j+1] < 20 && d[j+2] < 20) continue
+                        r += d[j]
+                        g += d[j+1]
+                        b += d[j+2]
+                        n++
                     }
             
-                    if (!n) n = 1;
+                    if (!n) n = 1
             
-                    r = Math.min(255, (r / n) * 1.15);
-                    g = Math.min(255, (g / n) * 1.15);
-                    b = Math.min(255, (b / n) * 1.15);
+                    r = (r / n) * 1.15
+                    g = (g / n) * 1.15
+                    b = (b / n) * 1.15
             
-                    imgEl.style.boxShadow = `
-                        0 0 10px 2px rgba(${r},${g},${b},0.7),
-                        0 0 16px 7px rgba(${r},${g},${b},0.35)
-                    `;
-                };
+                    img.style.boxShadow =
+                        `0 0 12px rgba(${r},${g},${b},.7),
+                         0 0 22px rgba(${r},${g},${b},.35)`
+                }
             }
             
-            function fade() {
-                const body = document.querySelector(".container-body");
-                const top = document.querySelector(".topbar");
-                const spot = document.querySelector(".topbar-bottom");
-            
-                let els = [];
-            
-                top.querySelectorAll("*").forEach(e => els.push(e));
-                body.querySelectorAll("*").forEach(e => els.push(e));
-                if (spot) spot.querySelectorAll("*").forEach(e => els.push(e));
-            
-                els.forEach((e, i) => {
-                    if (e.classList.contains("fade-in")) return;
-                    e.classList.add("fade-in");
-                    e.style.animationDelay = i * 0.035 + "s";
-                });
-            }
-            
-            window.addEventListener("DOMContentLoaded", () => {
-                views();
-                fade();
-            });
-            
-            connect();
+            open()
             </script>
     </body>
 </html>
