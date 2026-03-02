@@ -3,7 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>mfn | main.page</title>
+        <meta property="og:title" content="learn about me" />
+        <meta property="og:description" content="self-taught developer experienced in HTML and Python, creating optimized and maintainable software." />
+        <meta property="og:image" content="download.ico" />
+        <meta property="og:url" content="https://mfn.lol/" />
+        <meta property="og:site_name" content="mfn" />
+        <title>mfn</title>
 
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet"
@@ -29,8 +34,7 @@
                                     </div>
 
                                     <div class="userid-wrapper">
-                                        <span
-                                            class="userid">771464297419243560</span>
+                                        <span class="userid">771464297419243560</span>
                                     </div>
                                 </div>
                             </div>
@@ -60,14 +64,24 @@
 
                     <div class="cards">
                         <div class="container">
-                            <div class="container-header">
+                            
+                            <div class="container-header" id="page-header">
                                 <span class="container-title">
-                                    mfn / <span
-                                        class="container-title-muted">main.page</span>
+                                    mfn / <span class="container-title-muted" id="page-subtitle">main.page</span>
                                 </span>
+                                <span class="container-chevron" id="page-chevron">▼</span>
+
+                                <div class="dropdown" id="page-dropdown" style="display:none;">
+                                    <div class="dropdown-item active" data-page="main">
+                                        mfn / <span class="dropdown-item-muted">main.page</span>
+                                    </div>
+                                    <div class="dropdown-item" data-page="projects">
+                                        mfn / <span class="dropdown-item-muted">projects.page</span>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="container-body">
+                            <div class="container-body page-content" id="page-main">
                                 <h1 class="heading">Hi, I'm mfn</h1>
                                 <hr class="divider-line" />
 
@@ -82,8 +96,7 @@
 
                                 <div class="info-grid">
                                     <div class="info-item">
-                                        <span
-                                            class="info-label">Experience</span>
+                                        <span class="info-label">Experience</span>
                                         <span class="info-value">5 years</span>
                                     </div>
 
@@ -101,8 +114,7 @@
 
                                 <hr class="divider-line" />
 
-                                <p
-                                    class="section-label-small">Specializations</p>
+                                <p class="section-label-small">Specializations</p>
 
                                 <div class="lang-list">
                                     <div class="lang-item">
@@ -114,41 +126,90 @@
                                     <div class="lang-item">
                                         <i class="devicon-css3-plain"></i>
                                         <span class="lang-name">CSS</span>
-                                        <span class="lang-tag">Modern
-                                            Styling</span>
+                                        <span class="lang-tag">Modern Styling</span>
                                     </div>
 
                                     <div class="lang-item">
                                         <i class="devicon-javascript-plain"></i>
-                                        <span
-                                            class="lang-name">JavaScript</span>
-                                        <span class="lang-tag">Web &
-                                            Automation</span>
+                                        <span class="lang-name">JavaScript</span>
+                                        <span class="lang-tag">Web & Automation</span>
                                     </div>
 
                                     <div class="lang-item">
                                         <i class="devicon-python-plain"></i>
                                         <span class="lang-name">Python</span>
-                                        <span class="lang-tag">Data
-                                            Analysis</span>
+                                        <span class="lang-tag">Data Analysis</span>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="container-body page-content" id="page-projects" style="display:none;">
+                                <h1 class="heading">projects</h1>
+                                <hr class="divider-line" />
+
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <span class="project-name">liquidify</span>
+                                        <span class="project-tag">Hyperliquid</span>
+                                        <span class="project-tag lang">python</span>
+                                    </div>
+                                    <p class="project-desc">A Hyperliquid trading bot utilizing technichal indicators and so much more. (IN PROGRESS)</p>
+                                    <div class="project-footer">
+                                        <a href="https://github.com/mfngitz" target="_blank" class="project-link">
+                                            github
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;margin-left:4px;opacity:.5;">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                        </a>
+                                        <button class="project-previews-btn" id="ex19-btn">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                            </svg>
+                                            view preview
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <span class="project-name">propEval</span>
+                                        <span class="project-tag">Sports</span>
+                                        <span class="project-tag lang">python</span>
+                                    </div>
+                                    <p class="project-desc">A tool that uses props.cash's data and analyzes it using algorithims and scoring methods, giving the best of the best outputs.</p>
+                                    <div class="project-footer">
+                                        <a href="https://github.com/mfngitz/propEval" target="_blank" class="project-link">
+                                            github
+                                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;margin-left:4px;opacity:.5;">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="project-card">
+                                    <div class="project-header">
+                                        <span class="project-name">polymated</span>
+                                        <span class="project-tag">Polymarket</span>
+                                        <span class="project-tag lang">python</span>
+                                    </div>
+                                    <p class="project-desc">5-Min BTC Up/Down Market Automation (IN PROGRESS)</p>
+                                    <div class="project-footer">
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="views-box">
-                <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#555"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
                     <circle cx="12" cy="12" r="3" />
                 </svg>
@@ -204,24 +265,16 @@
             
             function open() {
                 if (s) s.close()
-            
                 s = new WebSocket("wss://api.lanyard.rest/socket")
-            
                 s.onopen = () => {
-                    s.send(JSON.stringify({
-                        op: 2,
-                        d: { subscribe_to_id: id }
-                    }))
+                    s.send(JSON.stringify({ op: 2, d: { subscribe_to_id: id } }))
                 }
-            
                 s.onmessage = e => {
                     const m = JSON.parse(e.data)
                     if (!m.t) return
-            
                     if (m.t === "INIT_STATE" || m.t === "PRESENCE_UPDATE") {
                         const d = m.d
                         st.className = "discord-status " + d.discord_status
-            
                         if (d.listening_to_spotify && d.spotify) {
                             show(d.spotify)
                         } else {
@@ -236,20 +289,15 @@
             function show(sp) {
                 if (sp.track_id === curTrack) return
                 curTrack = sp.track_id
-            
                 p.classList.add("visible")
                 w.classList.add("has-spotify")
-            
                 img.src = sp.album_art_url
                 img.onload = glow
-            
                 title.textContent = sp.song
                 by.textContent = sp.artist
                 alb.textContent = sp.album
-            
                 title.href = "https://open.spotify.com/track/" + sp.track_id
                 title.target = "_blank"
-            
                 bar(sp.timestamps.start, sp.timestamps.end)
             }
             
@@ -257,9 +305,7 @@
                 p.classList.remove("visible")
                 w.classList.remove("has-spotify")
                 curTrack = null
-            
                 if (t) clearInterval(t)
-            
                 fill.style.width = "0%"
                 time1.textContent = "0:00"
                 time2.textContent = "0:00"
@@ -267,18 +313,14 @@
             
             function bar(start, end) {
                 if (t) clearInterval(t)
-            
                 const len = end - start
-            
                 function tick() {
                     let now = Date.now() - start
                     if (now > len) now = len
-            
                     fill.style.width = (now / len) * 100 + "%"
                     time1.textContent = fmt(now)
                     time2.textContent = fmt(len)
                 }
-            
                 tick()
                 t = setInterval(tick, 1000)
             }
@@ -294,39 +336,105 @@
                 const i = new Image()
                 i.crossOrigin = "anonymous"
                 i.src = img.src
-            
                 i.onload = () => {
                     const c = document.createElement("canvas")
                     const x = c.getContext("2d")
                     c.width = 60
                     c.height = 60
-            
                     x.drawImage(i, 0, 0, 60, 60)
                     const d = x.getImageData(0, 0, 60, 60).data
-            
                     let r = 0, g = 0, b = 0, n = 0
-            
                     for (let j = 0; j < d.length; j += 4) {
                         if (d[j] < 20 && d[j+1] < 20 && d[j+2] < 20) continue
-                        r += d[j]
-                        g += d[j+1]
-                        b += d[j+2]
-                        n++
+                        r += d[j]; g += d[j+1]; b += d[j+2]; n++
                     }
-            
                     if (!n) n = 1
-            
                     r = (r / n) * 1.15
                     g = (g / n) * 1.15
                     b = (b / n) * 1.15
-            
                     img.style.boxShadow =
-                        `0 0 12px rgba(${r},${g},${b},.7),
-                         0 0 22px rgba(${r},${g},${b},.35)`
+                        `0 0 12px rgba(${r},${g},${b},.7), 0 0 22px rgba(${r},${g},${b},.35)`
                 }
             }
             
             open()
-            </script>
+
+            const pageHeader   = document.getElementById("page-header")
+            const pageSubtitle = document.getElementById("page-subtitle")
+            const pageChevron  = document.getElementById("page-chevron")
+            const pageDropdown = document.getElementById("page-dropdown")
+            const pageContents = {
+                main:     document.getElementById("page-main"),
+                projects: document.getElementById("page-projects")
+            }
+
+            let dropOpen   = false
+            let activePage = "main"
+
+            function animatePage(el) {
+                const children = Array.from(el.children)
+                children.forEach((child, i) => {
+                    child.style.opacity = "0"
+                    child.style.animation = "none"
+                    child.offsetHeight 
+                    child.style.animation = ""
+                    child.style.animationDelay = (i * 60) + "ms"
+                    child.classList.add("fade-in")
+                })
+            }
+
+            animatePage(pageContents.main)
+
+            pageHeader.addEventListener("click", (e) => {
+                if (e.target.closest(".dropdown-item")) return
+                dropOpen = !dropOpen
+                if (dropOpen) {
+                    pageDropdown.style.display = "block"
+                    pageDropdown.classList.remove("closing")
+                    pageChevron.style.transform = "rotate(180deg)"
+                } else {
+                    closeDropdown()
+                }
+            })
+
+            pageDropdown.querySelectorAll(".dropdown-item").forEach(item => {
+                item.addEventListener("click", (e) => {
+                    e.stopPropagation()
+                    switchPage(item.dataset.page)
+                    closeDropdown()
+                })
+            })
+
+            document.addEventListener("click", (e) => {
+                if (dropOpen && !pageHeader.contains(e.target)) closeDropdown()
+            })
+
+            function closeDropdown() {
+                dropOpen = false
+                pageChevron.style.transform = "rotate(0deg)"
+                pageDropdown.classList.add("closing")
+                setTimeout(() => {
+                    pageDropdown.style.display = "none"
+                    pageDropdown.classList.remove("closing")
+                }, 150)
+            }
+
+            function switchPage(page) {
+                if (page === activePage) return
+                activePage = page
+                pageSubtitle.textContent = page + ".page"
+                pageDropdown.querySelectorAll(".dropdown-item").forEach(i => {
+                    i.classList.toggle("active", i.dataset.page === page)
+                })
+                Object.entries(pageContents).forEach(([key, el]) => {
+                    if (key === page) {
+                        el.style.display = "flex"
+                        animatePage(el)
+                    } else {
+                        el.style.display = "none"
+                    }
+                })
+            }
+        </script>
     </body>
 </html>
