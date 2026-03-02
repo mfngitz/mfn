@@ -1151,3 +1151,10 @@ body {
 {
     scale: 1.05;
 }
+
+.projects-cards{margin-top:0}.container-chevron{font-size:9px;color:#333;transition:transform .2s ease}.projects-cards .container{height:auto}.projects-cards .container-body{height:auto;overflow-y:visible}.project-card+.project-card{margin-top:0}.fade-in .project-card,.fade-in hr,.fade-in h1{width:100%}
+.container-chevron{font-size:9px;color:#333;transition:transform .2s ease;margin-left:auto;flex-shrink:0}
+.container-header{display:flex;align-items:center;gap:8px}
+@keyframes pageFadeIn{0%{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.page-fade-in{animation:pageFadeIn .25s ease forwards}
+.project-card{background:#080808;border:1px solid #111;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px}
